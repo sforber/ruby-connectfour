@@ -99,9 +99,11 @@ class Game
     end 
 
     def verticalWin
-        for column in (0..6)
-            if @places[0][column] == @places[1][column] && @places[0][column] == @places[2][column] && @places[0][column] == @places[3][column] && @places[0][column] != " "
-                return true
+        for row in (0..2)
+            for column in (0..6)
+                if @places[row][column] == @places[row + 1][column] && @places[row][column] == @places[row + 2][column] && @places[row][column] == @places[row + 3][column] && @places[row][column] != " "
+                    return true
+                end
             end
         end
         return false
